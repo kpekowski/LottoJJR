@@ -109,7 +109,7 @@ class ResultCheckerFacadeTest {
     @Test
     public void it_should_generate_result_with_correct_credentials() {
         //given
-        LocalDateTime drawDate = LocalDateTime.of(2022, 12, 17, 12, 0, 0);
+        LocalDateTime drawDate = LocalDateTime.of(2023, 7, 28, 12, 0, 0);
         when(winningNumbersGeneratorFacade.generateWinningNumbers()).thenReturn(WinningNumbersDto.builder()
                 .winningNumbers(Set.of(1, 2, 3, 4, 5, 6))
                 .build());
