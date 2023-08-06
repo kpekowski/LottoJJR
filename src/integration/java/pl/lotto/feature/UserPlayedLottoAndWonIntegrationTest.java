@@ -7,7 +7,6 @@ public class UserPlayedLottoAndWonIntegrationTest extends BaseIntegrationTest {
 
     @Test
     public void should_user_win_and_system_should_generate_winners() {
-
         //    step 1: external service returns 6 random numbers (1,2,3,4,5,6)
         //    step 2: user made POST /inputNumbers with 6 numbers (1, 2, 3, 4, 5, 6) at 16-11-2022 10:00 and system returned OK(200) with message: “success” and Ticket (DrawDate:19.11.2022 12:00 (Saturday), TicketId: sampleTicketId)
         //    step 3: system fetched winning numbers for draw date: 19.11.2022 12:00
