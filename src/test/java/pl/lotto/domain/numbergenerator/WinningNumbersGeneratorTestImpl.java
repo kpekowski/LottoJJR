@@ -2,7 +2,7 @@ package pl.lotto.domain.numbergenerator;
 
 import java.util.Set;
 
-class WinningNumbersGeneratorTestImpl implements RandomNumbersGenerable {
+class WinningNumbersGeneratorTestImpl implements RandomNumberGenerable {
     private final Set<Integer> generatedNumbers;
 
     WinningNumbersGeneratorTestImpl() {

@@ -1,5 +1,5 @@
 package pl.lotto.domain.numbergenerator;
 
-public interface RandomNumbersGenerable {
+public interface RandomNumberGenerable {
     SixRandomNumbersDto generateSixRandomNumbers();
 }

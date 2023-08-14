@@ -4,7 +4,7 @@ import pl.lotto.domain.numberreceiver.NumberReceiverFacade;
 
 public class NumberGeneratorConfiguration {
 
-    WinningNumbersGeneratorFacade createForTest(RandomNumbersGenerable randomNumbersGenerable,
+    WinningNumbersGeneratorFacade createForTest(RandomNumberGenerable randomNumbersGenerable,
                                                 WinningNumbersRepository winningNumbersRepository,
                                                 NumberReceiverFacade numberReceiverFacade){
         WinningNumbersValidator winningNumbersValidator = new WinningNumbersValidator();
