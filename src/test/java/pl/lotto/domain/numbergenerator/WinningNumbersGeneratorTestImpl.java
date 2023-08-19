@@ -2,7 +2,7 @@ package pl.lotto.domain.numbergenerator;
 
 import java.util.Set;
 
-class WinningNumbersGeneratorTestImpl implements RandomNumbersGenerable {
+class WinningNumbersGeneratorTestImpl implements RandomNumberGenerable {
     private final Set<Integer> generatedNumbers;
 
     WinningNumbersGeneratorTestImpl() {
@@ -14,7 +14,7 @@ class WinningNumbersGeneratorTestImpl implements RandomNumbersGenerable {
     }
 
     @Override
-    public SixRandomNumbersDto generateSixRandomNumbers() {
+    public SixRandomNumbersDto generateSixRandomNumbers(int count, int lowerBand, int upperBand) {
         return SixRandomNumbersDto.builder()
                 .numbers(generatedNumbers)
                 .build();

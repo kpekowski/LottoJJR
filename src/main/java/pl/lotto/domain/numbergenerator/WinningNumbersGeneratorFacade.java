@@ -9,15 +9,16 @@ import java.util.Set;
 
 @AllArgsConstructor
 public class WinningNumbersGeneratorFacade {
-    private final RandomNumbersGenerable randomGenerable;
+    private final RandomNumberGenerable randomGenerable;
     private final WinningNumbersValidator winningNumbersValidator;
     private final WinningNumbersRepository winningNumbersRepository;
     private final NumberReceiverFacade numberReceiverFacade;
+    private final WinningNumbersGeneratorFacadeConfigurationProperties properties;
 
     public WinningNumbersDto generateWinningNumbers() {
         LocalDateTime nextDrawDate = numberReceiverFacade.retrieveNextDrawDate();
-        SixRandomNumbersDto dto = randomGenerable.generateSixRandomNumbers();
-        Set<Integer> winningNumbers = dto.numbers();
+        SixRandomNumbersDto sixRandomNumbersDto = randomGenerable.generateSixRandomNumbers(properties.count(), properties.lowerBand(), properties.upperBand());
+        Set<Integer> winningNumbers = sixRandomNumbersDto.numbers();
         winningNumbersValidator.validate(winningNumbers);
         winningNumbersRepository.save(WinningNumbers.builder()
                 .winningNumbers(winningNumbers)
