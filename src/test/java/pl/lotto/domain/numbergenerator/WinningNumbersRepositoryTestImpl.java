@@ -16,7 +16,7 @@ import java.util.function.Function;
 class WinningNumbersRepositoryTestImpl implements WinningNumbersRepository {
     private final Map<LocalDateTime, WinningNumbers> winningNumbersList = new ConcurrentHashMap<>();
     @Override
-    public Optional<WinningNumbers> findNumbersByDate(LocalDateTime date) {
+    public Optional<WinningNumbers> findFirstByDate(LocalDateTime date) {
         return Optional.ofNullable(winningNumbersList.get(date));
     }
 
