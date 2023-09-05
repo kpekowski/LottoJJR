@@ -32,7 +32,7 @@ public class WinningNumbersGeneratorFacade {
     }
 
     public WinningNumbersDto retrieveWinningNumbersByDate(LocalDateTime date) {
-        WinningNumbers numbersByDate = winningNumbersRepository.findNumbersByDate(date).
+        WinningNumbers numbersByDate = winningNumbersRepository.findFirstByDate(date).
                 orElseThrow(() -> new WinningNumbersNotFoundException("Not Found"));
         return WinningNumbersDto.builder()
                 .winningNumbers(numbersByDate.winningNumbers())
