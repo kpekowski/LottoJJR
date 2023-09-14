@@ -15,7 +15,6 @@ import static pl.lotto.domain.resultannouncer.MessageResponse.*;
 
 @AllArgsConstructor
 public class ResultAnnouncerFacade {
-    public static LocalTime RESULTS_ANNOUNCEMENT_TIME = LocalTime.of(12, 0).plusMinutes(5);
     private final ResultCheckerFacade resultCheckerFacade;
     private final ResponseRepository responseRepository;
     private final Clock clock;
@@ -63,7 +62,8 @@ public class ResultAnnouncerFacade {
     }
 
     private boolean isAfterAnnouncementTime(ResultDto resultDto) {
-        LocalDateTime announcementDateTime = LocalDateTime.of(resultDto.drawDate().toLocalDate(), RESULTS_ANNOUNCEMENT_TIME);
-        return LocalDateTime.now(clock).isAfter(announcementDateTime);
+        LocalDateTime announcementDateTime = resultDto.drawDate();
+        LocalDateTime now = LocalDateTime.now(clock);
+        return now.isAfter(announcementDateTime);
     }
 }

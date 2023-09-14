@@ -56,7 +56,7 @@ public class NumberReceiverFacade {
         LocalDateTime nextDrawDate = drawDateGenerator.getNextDrawDate();
         if (date.isAfter(nextDrawDate))
             return Collections.EMPTY_LIST;
-        return repository.findAllTicketsByDrawDate(date)
+        return repository.findAllByDrawDate(date)
                 .stream()
                 .filter(ticket -> ticket.drawDate().equals(date))
                 .map(ticket -> TicketDto.builder()

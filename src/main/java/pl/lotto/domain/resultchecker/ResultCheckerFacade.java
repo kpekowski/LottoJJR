@@ -20,7 +20,7 @@ public class ResultCheckerFacade {
     PlayerRepository playerRepository;
     WinnerRetriever winnerGenerator;
 
-    public PlayersDto generateWinners() {
+    public PlayersDto generateResults() {
         List<TicketDto> allTicketsByDate = numberReceiverFacade.retrieveAllTicketsByNextDrawDate();
         List<Ticket> tickets = ResultCheckerMapper.mapFromTicketDto(allTicketsByDate);
         WinningNumbersDto winningNumbersDto = winningNumbersGeneratorFacade.generateWinningNumbers();
