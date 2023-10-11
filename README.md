@@ -36,7 +36,7 @@ Testing:<br>
 docker compose up
 ``
 
-= Alternatively you can run docker-compose file through you IDE
+- Alternatively you can run docker-compose file through you IDE
 
 After everything builds and ready, you can start application and test using [Postman](https://www.postman.com/)
 or use <a href="http://localhost:8080/swagger-ui/index.html#/">Swagger</a>. Please note, that lottery results are generated
