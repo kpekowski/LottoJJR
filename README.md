@@ -9,7 +9,7 @@
 
 ## Tech
 
-JobOffers is developed using following technologies: <br>
+LottoGame is developed using following technologies: <br>
 
 Core: <br>
 ![image](https://img.shields.io/badge/17-Java-orange?style=for-the-badge) &nbsp;
@@ -22,3 +22,32 @@ Testing:<br>
 ![image](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white) &nbsp;
 ![image](https://img.shields.io/badge/Mockito-78A641?style=for-the-badge) &nbsp;
 ![image](https://img.shields.io/badge/Testcontainers-9B489A?style=for-the-badge) &nbsp;
+
+
+## Installation and run
+
+### Requirements:
+- Docker
+- Two files placed in the same folder: **[docker-compose.yml](https://github.com/kubapek/LottoGame/blob/master/docker-compose.yml)** 
+and **[init-mongo.js](https://github.com/kubapek/LottoGame/blob/master/init-mongo.js)** <br>
+
+### To run the application:
+- Just run following command, and wait for containers to be pulled up and started.
+
+``
+docker compose up
+``
+
+After everything builds and ready, you can test the application using [Postman](https://www.postman.com/)
+or use <a href="http://localhost:8080/swagger-ui/index.html#/">Swagger</a>. Please note, that lottery results are generated
+each Saturday at 12:00.<br>
+
+
+## Rest-API Endpoints
+
+Service url: http://localhost:8080
+
+| HTTP METHOD | Endpoint           | Action                                   |
+|-------------|--------------------|------------------------------------------|
+| POST        | /inputNumbers      | To input 6 distinct numbers              |
+| GET         | /results/{id}      | To retrieve lottery results for given ID |
