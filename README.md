@@ -28,8 +28,6 @@ Testing:<br>
 
 ### Requirements:
 - Docker
-- Two files placed in the same folder: **[docker-compose.yml](https://github.com/kubapek/LottoGame/blob/master/docker-compose.yml)** 
-and **[init-mongo.js](https://github.com/kubapek/LottoGame/blob/master/init-mongo.js)** <br>
 
 ### To run the application:
 - Just run following command, and wait for containers to be pulled up and started.
@@ -38,7 +36,9 @@ and **[init-mongo.js](https://github.com/kubapek/LottoGame/blob/master/init-mong
 docker compose up
 ``
 
-After everything builds and ready, you can test the application using [Postman](https://www.postman.com/)
+= Alternatively you can run docker-compose file through you IDE
+
+After everything builds and ready, you can start application and test using [Postman](https://www.postman.com/)
 or use <a href="http://localhost:8080/swagger-ui/index.html#/">Swagger</a>. Please note, that lottery results are generated
 each Saturday at 12:00.<br>
 
